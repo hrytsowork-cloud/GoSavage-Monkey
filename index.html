@@ -444,25 +444,70 @@
   [data-funnel]:hover [data-drop]{animation-duration:.7s}
   [data-funnel] svg{transition:transform .3s ease}
   [data-funnel]:hover svg{transform:translateY(1px) scale(1.08)}
+  .nav-checkbox{display:none}
+  .nav-burger{display:none;cursor:pointer;padding:8px;margin:-8px;border-radius:8px;align-items:center;justify-content:center}
+  .nav-burger:hover{background:rgba(22,18,14,.06)}
+  @media (max-width:900px){
+    html,body{overflow-x:hidden}
+    .nav-links{display:none !important}
+    .nav-burger{display:flex !important}
+    .nav-checkbox:checked ~ .nav-links{
+      display:flex !important;
+      position:absolute !important;
+      top:100% !important;
+      left:0 !important;
+      right:0 !important;
+      width:auto !important;
+      flex-direction:column !important;
+      align-items:flex-start !important;
+      gap:4px !important;
+      background:#F7F3EC !important;
+      padding:14px 28px 20px !important;
+      box-shadow:0 12px 24px rgba(22,18,14,.1) !important;
+      overflow:visible !important;
+      border-bottom:1px solid rgba(22,18,14,.08) !important;
+    }
+    .nav-checkbox:checked ~ .nav-links a{padding:11px 0;width:100%;font-size:16px}
+    .hero-photo{
+      position:static !important;
+      left:auto !important;
+      top:auto !important;
+      width:100% !important;
+      max-width:380px !important;
+      height:auto !important;
+      margin:28px auto 0 !important;
+      display:block !important;
+      mask-image:none !important;
+      -webkit-mask-image:none !important;
+    }
+    .hero-chip{display:none !important}
+  }
+  @media (max-width:480px){
+    .nav-links a{font-size:16px}
+  }
 </style>
 </helmet>
 <div style="width:100%;overflow-x:clip;background:#F7F3EC">
 
   <!-- ===================== NAV ===================== -->
   <header style="position:sticky;top:0;z-index:60;background:rgba(247,243,236,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(22,18,14,.08)">
-    <nav style="max-width:1200px;margin:0 auto;width:100%;padding:0 28px;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap">
+    <nav style="max-width:1200px;margin:0 auto;width:100%;padding:0 28px;min-height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:nowrap;position:relative">
       <img src="logo-gosavagemonkey.png" alt="13" style="max-width: 100%; height: 43px; display: block; object-fit: contain; width: 217px"><a href="#top" style="display:flex;align-items:center;gap:11px">
-        
-        
+
+
       </a>
-      <div style="display:flex;align-items:center;gap:24px;font-size:14.5px;font-weight:600;color:#48413A;flex-wrap:nowrap;overflow:hidden">
+      <input type="checkbox" id="nav-toggle" class="nav-checkbox">
+      <div class="nav-links" style="display:flex;align-items:center;gap:24px;font-size:14.5px;font-weight:600;color:#48413A;flex-wrap:nowrap;overflow:hidden">
         <a href="#problems" style="white-space:nowrap">Problems</a>
         <a href="#diagnostic" style="white-space:nowrap">Diagnostic</a>
         <a href="#output" style="white-space:nowrap">What You Get</a>
         <a href="#packages" style="white-space:nowrap">Packages</a>
         <a href="#faq" style="white-space:nowrap">FAQ</a>
       </div>
-      <a href="#book" style="background:#16120E;color:#fff;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:11px;white-space:nowrap;flex:none">Book Your Audit</a>
+      <div style="display:flex;align-items:center;gap:12px">
+        <a href="#book" style="background:#16120E;color:#fff;font-weight:700;font-size:14.5px;padding:12px 20px;border-radius:11px;white-space:nowrap;flex:none">Book Your Audit</a>
+        <label for="nav-toggle" class="nav-burger" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" fill="none"><path d="M3 6h16M3 11h16M3 16h16" stroke="#16120E" stroke-width="2" stroke-linecap="round"></path></svg></label>
+      </div>
     </nav>
   </header>
 
@@ -496,11 +541,11 @@
         <!-- monkey -->
         
         <!-- metric chips -->
-        <div style="position: absolute; top: 4%; left: 37px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite">
+        <div class="hero-chip" style="position: absolute; top: 4%; left: 37px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite">
           <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75">Store</div>
           <div style="font-size:17px;font-weight:700;margin-top:2px;font-family:'Space Grotesk',sans-serif;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#7FD9A2;display:block"></span>Audited</div>
         </div>
-        <div style="position: absolute; top: 493px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite .9s; left: 438px">
+        <div class="hero-chip" style="position: absolute; top: 493px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite .9s; left: 438px">
           
           <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75">Feed</div><div style="font-size:17px;font-weight:700;margin-top:2px;font-family:'Space Grotesk',sans-serif;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#FFCB7A;display:block"></span>12 issues</div>
         </div>
@@ -513,7 +558,7 @@
       <span>Shopify</span><span style="opacity:.4">·</span><span>Google Merchant Center</span><span style="opacity:.4">·</span><span>Performance Max</span><span style="opacity:.4">·</span><span>GA4</span><span style="opacity:.4">·</span><span>Google Tag Manager</span>
     </div>
   </div>
-  <img src="monkey-hero-photo.webp" alt="Smartmonkey — Shopify growth diagnostics mascot" style="position: absolute; height: 746px; width: 1208px; max-width: none; display: block; object-fit: contain; object-position: bottom right; -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 22%,#000 86%,transparent 100%),linear-gradient(to bottom,#000 72%,transparent 99%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right,transparent 0%,#000 22%,#000 86%,transparent 100%),linear-gradient(to bottom,#000 72%,transparent 99%); mask-composite: intersect; pointer-events: none; left: 452px; top: 0px"><div style="position: absolute; top: 144px; left: 1256px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite 1.8s">
+  <img class="hero-photo" src="monkey-hero-photo.webp" alt="Smartmonkey — Shopify growth diagnostics mascot" style="position: absolute; height: 746px; width: 1208px; max-width: none; display: block; object-fit: contain; object-position: bottom right; -webkit-mask-image: linear-gradient(to right,transparent 0%,#000 22%,#000 86%,transparent 100%),linear-gradient(to bottom,#000 72%,transparent 99%); -webkit-mask-composite: source-in; mask-image: linear-gradient(to right,transparent 0%,#000 22%,#000 86%,transparent 100%),linear-gradient(to bottom,#000 72%,transparent 99%); mask-composite: intersect; pointer-events: none; left: 452px; top: 0px"><div class="hero-chip" style="position: absolute; top: 144px; left: 1256px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.3); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-radius: 14px; padding: 11px 16px; color: #fff; animation: smfloat 6s ease-in-out infinite 1.8s">
           <div style="font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;opacity:.75">Tracking</div>
           <div style="font-size:17px;font-weight:700;margin-top:2px;font-family:'Space Grotesk',sans-serif;display:flex;align-items:center;gap:8px"><span style="width:8px;height:8px;border-radius:50%;background:#F2670F;display:block"></span>Gaps found</div>
         </div></section>
