@@ -941,19 +941,24 @@
           <p style="font-size:13.5px;color:rgba(255,255,255,.82);margin:5px 0 0">Schedule a short strategy call and we'll help you choose the right package.</p>
         </div>
       </div>
-      <form style="background:#fff;border-radius:22px;padding:30px;box-shadow:0 30px 70px rgba(120,45,0,.32)" onsubmit="return false">
+      <form id="audit-form" action="https://api.web3forms.com/submit" method="POST" style="background:#fff;border-radius:22px;padding:30px;box-shadow:0 30px 70px rgba(120,45,0,.32)">
+        <input type="hidden" name="access_key" value="cedaf4f3-4ea5-4482-96aa-b833dd04aff0">
+        <input type="hidden" name="subject" value="New audit request from gosavagemonkey.com">
+        <input type="hidden" name="from_name" value="Go Savage Monkey Website">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
         <div style="font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:600;margin-bottom:18px">Book Your Shopify Audit</div>
         <div style="display:flex;flex-direction:column;gap:13px">
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Name<input type="text" placeholder="Your name" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Website URL<input type="text" placeholder="yourstore.com" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Email<input type="email" placeholder="you@email.com" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Name<input type="text" name="name" required placeholder="Your name" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Website URL<input type="text" name="website" required placeholder="yourstore.com" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Email<input type="email" name="email" required placeholder="you@email.com" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"></label>
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:13px">
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Monthly ad budget<select style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"><option>Under $2k</option><option>$2k – $5k</option><option>$5k – $10k</option><option>$10k+</option></select></label>
-            <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Preferred package<select style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"><option>Audit — 399€</option><option>Growth Setup — 499€</option><option>Full Growth — 749€</option><option>Not sure yet</option></select></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Monthly ad budget<select name="budget" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"><option>Under $2k</option><option>$2k – $5k</option><option>$5k – $10k</option><option>$10k+</option></select></label>
+            <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Preferred package<select name="package" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2"><option>Audit — 399€</option><option>Growth Setup — 499€</option><option>Full Growth — 749€</option><option>Not sure yet</option></select></label>
           </div>
-          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Main challenge<textarea rows="2" placeholder="What's blocking your growth right now?" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2;resize:vertical"></textarea></label>
+          <label style="display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:700;color:#6B6258;letter-spacing:.02em;text-transform:uppercase">Main challenge<textarea name="message" rows="2" placeholder="What's blocking your growth right now?" style="font-family:inherit;font-size:15px;font-weight:500;color:#16120E;padding:13px 14px;border:1px solid rgba(22,18,14,.14);border-radius:11px;outline:none;background:#FAF7F2;resize:vertical"></textarea></label>
         </div>
         <button type="submit" style="width:100%;margin:18px 0 0;background:#F2670F;color:#fff;font-family:inherit;font-weight:700;font-size:16px;padding:15px;border:none;border-radius:12px;cursor:pointer">Book Your Shopify Audit</button>
+        <div id="form-status" role="status" aria-live="polite" style="display:none;margin:14px 0 0;padding:12px 14px;border-radius:11px;font-size:14px;font-weight:600;line-height:1.45"></div>
         <p style="font-size:12.5px;line-height:1.5;color:#8A8077;margin:14px 0 0;text-align:center">No guaranteed ROAS promises. Just a clear diagnostic, priorities and next actions.</p>
       </form>
     </div>
@@ -998,4 +1003,44 @@ class Component extends DCLogic {
 </script>
 
 
+<script>
+(function () {
+  var form = document.getElementById('audit-form');
+  if (!form) return;
+  var btn = form.querySelector('button[type="submit"]');
+  var msg = document.getElementById('form-status');
+  function show(text, ok) {
+    msg.textContent = text;
+    msg.style.color = ok ? '#1E7A46' : '#B3341A';
+    msg.style.background = ok ? '#E9F7EF' : '#FDEEE9';
+    msg.style.display = 'block';
+  }
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var original = btn.textContent;
+    btn.disabled = true;
+    btn.style.opacity = '.7';
+    btn.textContent = 'Sending\u2026';
+    msg.style.display = 'none';
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    }).then(function (r) { return r.json(); }).then(function (res) {
+      if (res.success) {
+        form.reset();
+        show("Thank you! Your request has been sent \u2014 we'll get back to you within 1 business day.", true);
+      } else {
+        show(res.message || 'Something went wrong. Please try again in a moment.', false);
+      }
+    }).catch(function () {
+      show('Network error. Please check your connection and try again.', false);
+    }).finally(function () {
+      btn.disabled = false;
+      btn.style.opacity = '';
+      btn.textContent = original;
+    });
+  });
+})();
+</script>
 </body></html>
