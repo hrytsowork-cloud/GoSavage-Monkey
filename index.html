@@ -36,7 +36,6 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="site-bundle.js"></script>
 
 </head>
 <body>
@@ -997,26 +996,22 @@
   </footer>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script="">
-class Component extends DCLogic {
-}
-</script>
 
 
 <script>
 (function () {
-  var form = document.getElementById('audit-form');
-  if (!form) return;
-  var btn = form.querySelector('button[type="submit"]');
-  var msg = document.getElementById('form-status');
-  function show(text, ok) {
+  function show(msg, text, ok) {
     msg.textContent = text;
     msg.style.color = ok ? '#1E7A46' : '#B3341A';
     msg.style.background = ok ? '#E9F7EF' : '#FDEEE9';
     msg.style.display = 'block';
   }
-  form.addEventListener('submit', function (e) {
+  document.addEventListener('submit', function (e) {
+    var form = e.target && e.target.id === 'audit-form' ? e.target : null;
+    if (!form) return;
     e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var msg = form.querySelector('#form-status');
     var original = btn.textContent;
     btn.disabled = true;
     btn.style.opacity = '.7';
@@ -1029,18 +1024,18 @@ class Component extends DCLogic {
     }).then(function (r) { return r.json(); }).then(function (res) {
       if (res.success) {
         form.reset();
-        show("Thank you! Your request has been sent \u2014 we'll get back to you within 1 business day.", true);
+        show(msg, "Thank you! Your request has been sent \u2014 we'll get back to you within 1 business day.", true);
       } else {
-        show(res.message || 'Something went wrong. Please try again in a moment.', false);
+        show(msg, res.message || 'Something went wrong. Please try again in a moment.', false);
       }
     }).catch(function () {
-      show('Network error. Please check your connection and try again.', false);
+      show(msg, 'Network error. Please check your connection and try again.', false);
     }).finally(function () {
       btn.disabled = false;
       btn.style.opacity = '';
       btn.textContent = original;
     });
-  });
+  }, true);
 })();
 </script>
 </body></html>
