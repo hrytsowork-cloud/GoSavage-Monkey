@@ -24,6 +24,18 @@
 <title>Go Savage Monkey | Shopify & eCommerce Growth Agency Romania</title>
 <meta name="description" content="Go Savage Monkey helps Shopify and eCommerce brands in Romania grow with conversion optimization, performance marketing and Shopify development.">
 <meta name="theme-color" content="#EE6310">
+<!-- Consent Mode v2: default denied until user accepts -->
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('consent', 'default', {
+  ad_storage: 'denied',
+  ad_user_data: 'denied',
+  ad_personalization: 'denied',
+  analytics_storage: 'denied',
+  wait_for_update: 500
+});
+</script>
 <!-- Google Tag Manager -->
   <script>
   (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -1012,6 +1024,35 @@
     msg.style.background = ok ? '#E9F7EF' : '#FDEEE9';
     msg.style.display = 'block';
   }
+  // cookie consent banner (Consent Mode v2)
+  (function () {
+    var KEY = 'gsm-consent';
+    function grant() {
+      gtag('consent', 'update', {
+        ad_storage: 'granted',
+        ad_user_data: 'granted',
+        ad_personalization: 'granted',
+        analytics_storage: 'granted'
+      });
+    }
+    var saved = null;
+    try { saved = localStorage.getItem(KEY); } catch (e) {}
+    if (saved === 'granted') { grant(); return; }
+    if (saved === 'denied') return;
+    var banner = document.getElementById('cookie-banner');
+    if (!banner) return;
+    banner.style.display = 'flex';
+    document.getElementById('cc-accept').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'granted'); } catch (e) {}
+      grant();
+      banner.remove();
+    });
+    document.getElementById('cc-decline').addEventListener('click', function () {
+      try { localStorage.setItem(KEY, 'denied'); } catch (e) {}
+      banner.remove();
+    });
+  })();
+
   // close mobile menu after tapping a nav link + aria state
   var navToggle = document.getElementById('nav-toggle');
   var navBurger = document.querySelector('.nav-burger');
@@ -1059,4 +1100,11 @@
   }, true);
 })();
 </script>
+<div id="cookie-banner" role="dialog" aria-label="Cookie consent" style="display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:1000;background:#16120E;color:#fff;border-radius:14px;padding:18px 20px;box-shadow:0 18px 44px rgba(22,18,14,.35);flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;max-width:720px;margin:0 auto">
+  <p style="margin:0;font-size:13.5px;line-height:1.5;color:rgba(255,255,255,.85);flex:1 1 300px">We use cookies to analyze traffic and improve the site. Analytics runs only if you accept.</p>
+  <div style="display:flex;gap:10px;flex:none">
+    <button id="cc-decline" type="button" style="background:transparent;border:1px solid rgba(255,255,255,.35);color:#fff;font-family:inherit;font-weight:600;font-size:13.5px;padding:10px 16px;border-radius:10px;cursor:pointer">Decline</button>
+    <button id="cc-accept" type="button" style="background:#F2670F;border:none;color:#fff;font-family:inherit;font-weight:700;font-size:13.5px;padding:10px 18px;border-radius:10px;cursor:pointer">Accept</button>
+  </div>
+</div>
 </body></html>
