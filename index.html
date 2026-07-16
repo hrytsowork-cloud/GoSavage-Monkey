@@ -629,20 +629,20 @@ gtag('consent', 'default', {
     height: 8px;
     margin-top: -4px;
     border-radius: 50%;
-    background: transparent;
-    box-shadow: 0 0 0 #F2670F, -14px 0 0 #F2670F, -28px 0 0 #F2670F, -42px 0 0 #F2670F, -56px 0 0 #F2670F;
+    background: #F2670F;
+    box-shadow: -14px 0 0 #F2670F, -28px 0 0 #F2670F, -42px 0 0 #F2670F, -56px 0 0 #F2670F;
     opacity: 0;
     transition: opacity .3s ease;
     pointer-events: none;
   }
   .deliv-card:hover::after { opacity: 1; animation: delivDots .75s ease-out forwards; }
   @keyframes delivDots {
-    0%   { box-shadow: 0 0 0 rgba(242,103,15,0), -14px 0 0 rgba(242,103,15,0), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
-    20%  { box-shadow: 0 0 0 rgba(242,103,15,1), -14px 0 0 rgba(242,103,15,0), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
-    40%  { box-shadow: 0 0 0 rgba(242,103,15,1), -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
-    60%  { box-shadow: 0 0 0 rgba(242,103,15,1), -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
-    80%  { box-shadow: 0 0 0 rgba(242,103,15,1), -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,1), -56px 0 0 rgba(242,103,15,0); }
-    100% { box-shadow: 0 0 0 rgba(242,103,15,1), -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,1), -56px 0 0 rgba(242,103,15,1); }
+    0%   { background-color: rgba(242,103,15,0); box-shadow: -14px 0 0 rgba(242,103,15,0), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
+    20%  { background-color: rgba(242,103,15,1); box-shadow: -14px 0 0 rgba(242,103,15,0), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
+    40%  { background-color: rgba(242,103,15,1); box-shadow: -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,0), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
+    60%  { background-color: rgba(242,103,15,1); box-shadow: -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,0), -56px 0 0 rgba(242,103,15,0); }
+    80%  { background-color: rgba(242,103,15,1); box-shadow: -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,1), -56px 0 0 rgba(242,103,15,0); }
+    100% { background-color: rgba(242,103,15,1); box-shadow: -14px 0 0 rgba(242,103,15,1), -28px 0 0 rgba(242,103,15,1), -42px 0 0 rgba(242,103,15,1), -56px 0 0 rgba(242,103,15,1); }
   }
   .deliv-card:hover {
     border-color: rgba(242,103,15,.35);
