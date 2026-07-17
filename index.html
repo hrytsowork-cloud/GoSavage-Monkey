@@ -648,6 +648,12 @@ gtag('consent', 'default', {
     border-color: rgba(242,103,15,.35);
     box-shadow: 0 6px 18px rgba(22,18,14,.08);
   }
+  /* ===== comparison cards (08): light by default, dark on hover ===== */
+  .compare-card { transition: background-color .3s ease, border-color .3s ease; }
+  .compare-card > div:first-child, .compare-card p { transition: color .3s ease; }
+  .compare-card:hover { background: #16120E !important; border-color: #16120E !important; }
+  .compare-card:hover > div:first-child { color: #F7A552 !important; }
+  .compare-card:hover p { color: rgba(255,255,255,.82) !important; }
   /* ===== interaction states (hover / focus) ===== */
   a[href="#book"], button[type="submit"], .nav-links a, details summary, #cookie-banner button {
     transition: transform .18s ease, box-shadow .18s ease, background-color .18s ease, color .18s ease, opacity .18s ease;
@@ -1067,10 +1073,10 @@ gtag('consent', 'default', {
         <p style="font-size:18px;line-height:1.55;color:#5C544B;margin:18px 0 0;font-weight:500">Most teams begin inside Google Ads. We first check whether your store, products, feed, tracking and offer are ready to make that ad spend work harder.</p>
       </div>
       <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px;margin:46px 0 0">
-        <div style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Traditional PPC agency</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Optimizes campaigns, but may miss store, feed, offer or product page blockers.</p></div>
-        <div style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Shopify developer</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Can improve the store, but may not connect changes to Shopping performance.</p></div>
-        <div style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Feed tool</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Can clean product data, but can't decide which products deserve more budget.</p></div>
-        <div style="background:#16120E;border-radius:16px;padding:24px;color:#fff"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#F7A552">Gosavagemonkey</div><p style="font-size:14px;line-height:1.55;color:rgba(255,255,255,.82);margin:12px 0 0">Connects store, offer, products, feed, tracking &amp; Shopping into one decision-ready action map.</p></div>
+        <div class="compare-card" style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Traditional PPC agency</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Optimizes campaigns, but may miss store, feed, offer or product page blockers.</p></div>
+        <div class="compare-card" style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Shopify developer</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Can improve the store, but may not connect changes to Shopping performance.</p></div>
+        <div class="compare-card" style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Feed tool</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Can clean product data, but can't decide which products deserve more budget.</p></div>
+        <div class="compare-card" style="background:#fff;border:1px solid rgba(22,18,14,.07);border-radius:16px;padding:24px"><div style="font-size:12px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#A8927A">Gosavagemonkey</div><p style="font-size:14px;line-height:1.55;color:#6B6258;margin:12px 0 0">Connects store, offer, products, feed, tracking &amp; Shopping into one decision-ready action map.</p></div>
       </div>
       <div style="display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0">
         <span style="display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid rgba(22,18,14,.08);border-radius:100px;padding:9px 16px;font-size:13.5px;font-weight:600;color:#16120E"><span style="width:6px;height:6px;border-radius:50%;background:#F2670F"></span>Shopify + Google Shopping focus</span>
